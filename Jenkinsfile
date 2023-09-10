@@ -11,7 +11,7 @@ stages {
         }
      stage('Build Package') {
        steps {
-         sh 'mvn clean package'
+         sh 'mvn package'
        }
      }
      stage('Publish HTML Reports') {
