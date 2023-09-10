@@ -6,21 +6,23 @@ pipeline {
 stages {
      stage('Git Checkout') {
        steps {
-         git 'https://github.com/devopscbabu/24-Apr-Insureme.git'
+         git 'https://github.com/devopscbabu/Project-Banking-May23.git'
              }
         }
      stage('Build Package') {
        steps {
-         sh 'mvn package'
+         sh 'mvn clean package'
        }
      }
      stage('Publish HTML Reports') {
        steps {
-         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/InsureProject/target/surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/BankingProject/target/surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
              }
          }
      stage('Create Docker image of App') {
        steps {
-         sh 'docker build -t cbabu85/insure-me-app:3.0 .'
+         sh 'docker build -t cbabu85/Banking-app:1.0 .'
              }
          }
+    }
+}
