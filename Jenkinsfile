@@ -21,7 +21,7 @@ stages {
          }
      stage('Create Docker image of App') {
        steps {
-         sh 'docker build -t cbabu85/Banking-app:1.0 .'
+         sh 'docker build -t cbabu85/banking-app:1.0 .'
              }
          }
     }
