@@ -6,31 +6,25 @@ pipeline {
 stages {
      stage('Git Checkout') {
        steps {
-         git 'https://github.com/devopscbabu/Project-Banking-May23.git'
+         git 'https://github.com/Yogibabu2/banking_finance.git'
              }
         }
      stage('Build Package') {
        steps {
-         sh 'mvn package'
+         sh 'mvn clean package'
        }
      }
      stage('Publish HTML Reports') {
        steps {
-         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/BankingProject/target/surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/Banking Project/target/surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
              }
          }
      stage('Create Docker image of App') {
        steps {
-         sh 'docker build -t cbabu85/banking-app:1.0 .'
+         sh 'docker build -t yogibaba1234/banking-app:1.0 .'
              }
          }
-      stage('Docker Image Push') {
-       steps {
-         withCredentials([usernamePassword(credentialsId: 'docker-hub-2', passwordVariable: 'docker_password', usernameVariable: 'docker_login')]) {
-         sh 'docker login -u ${docker_login} -p ${docker_password}'
-                     }
-         sh 'docker push cbabu85/banking-app:1.0'
-             }    
-         }   
-    }
 }
+}
+
+      
