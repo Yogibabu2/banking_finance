@@ -24,7 +24,7 @@ stages {
          sh 'docker build -t yogibaba1234/banking-app:1.0 .'
              }
          }
-}
+   }
 }
 
       
