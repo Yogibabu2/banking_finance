@@ -26,7 +26,7 @@ stages {
          }
   stage('Docker Image Push') {
        steps {
-         withCredentials([usernamePassword(credentialsId: 'docker-hub-2', passwordVariable: 'docker_password', usernameVariable: 'docker_login')]) {
+         withCredentials([usernamePassword(credentialsId: 'docker-hub4', passwordVariable: 'docker_password', usernameVariable: 'docker_user')]) {
          sh 'docker login -u ${docker_login} -p ${docker_password}'
                      }
          sh 'docker push yogibaba1234/banking-app:1.0'
