@@ -32,11 +32,6 @@ stages {
          sh 'docker push yogibaba1234/banking-app:1.0'
              }    
          }   
-  stage('Application Deploy-container') {
-          steps {
-            ansiblePlaybook credentialsId: 'ubuntu--ssh', disableHostKeyChecking: true, installation: 'ansible', playbook: 'deploy.yml'
-                }
-          }
    }
 }
 
