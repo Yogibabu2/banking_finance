@@ -18,9 +18,9 @@ stages {
   environment {
          AWS_ACCESS_KEY_ID    = credentials( 'AWS_ACCESS_KEY_ID')
          AWS_SECRET_ACCESS_KEY = credentials( 'AWS_SECRET_ACCESS_KEY')
-         }
+      }
   
-     stage('Publish HTML Reports') {
+         stage('Publish HTML Reports') {
        steps {
          publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/Banking project/target/surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
              }
