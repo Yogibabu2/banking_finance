@@ -36,18 +36,7 @@ stages {
          sh 'docker push yogibaba1234/banking-app:1.0'
              }    
          }   
-  /*stage ('Configure Test-server with Terraform, Ansible and then Deploying'){
-    steps {
-      dir("my-serverfiles"){
-        sh 'sudo chmod 600 mynewpair.pem'
-        sh 'terraform init'
-        sh 'terraform validate'
-        sh 'terraform apply --auto-approve'  
-       }
-     }
-   }*/
-   
- } 
+     
 }
   
 
