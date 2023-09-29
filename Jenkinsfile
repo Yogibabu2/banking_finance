@@ -36,7 +36,6 @@ stages {
          sh 'docker push yogibaba1234/banking-app:1.0'
              }    
          }   
-     
+  }
 }
-  
 
