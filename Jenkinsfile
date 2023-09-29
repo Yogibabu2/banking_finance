@@ -45,7 +45,7 @@ stages {
         sh 'terraform apply --auto-approve'  
        }
      }
-   }/*
+   }*/
    
  } 
 }
